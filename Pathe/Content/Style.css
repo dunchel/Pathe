@@ -1,0 +1,84 @@
+﻿body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #fff;
+    padding: 0px;
+    margin: 0px;
+}
+
+.logintextbox {
+    border-radius: 10px;
+    border-color: transparent;
+    padding: 3px;
+    background-color: lightgrey;
+}
+
+.wrapper {
+    width: 980px;
+    margin: 0 auto;
+}
+
+.topbar {
+    height: 30px;
+    background-color: #3b3b3d;
+}
+
+.navigationbar {
+    border: 3px solid #ffda74;
+    background-color: #ffda74;
+}
+
+.nav {
+    border: 3px solid #ffda74;
+    background-color: #ffda74;
+    list-style: none;
+    background-size: cover;
+}
+
+.navbarli {
+    font-size: 24px;
+    display: inline; 
+    position: relative;
+    background-size: cover;
+    padding: 45px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbarli a:link, .navbarli a:active, .navbarli a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+.navbarli a:hover {
+    color: lightyellow;
+}
+
+.footer {
+    border: 3px solid #ffda74;
+    background-color: #ffda74;
+    width: auto;
+    padding: 10px;
+}
+.sortregister
+{
+  margin-left:20px;
+  text-align:center;
+ 
+  color:#ffda74;
+  width:200px;
+  height: 40px;
+  border: 1px solid;
+  border-radius:5px;
+    background-color: #808080;
+ 
+  
+      
+}
+.buttonexpanded{
+   
+     background-color: #ffda74;
+     width:200px;
+     height:40px;
+     margin-left:20px;
+     border-radius:5px;
+     
+}

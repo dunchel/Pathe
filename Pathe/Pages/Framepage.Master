@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Framepage.master.cs" Inherits="Pathe.Pages.Framepage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>masterpage</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/Style.css" />
+    <asp:ContentPlaceHolder ID="Header" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="topbar"></div>
+        <div class="navigationbar">
+            <ul class="nav">
+                <li class="navbarli"><a href="Home.aspx">
+                    <img src="../Content/Images/Pathe_logo.png" style="width: 100px; height: 60px;" /></a></li>
+                <li class="navbarli"><a href="FilmOverzicht.aspx">Film overzicht</a></li>
+                <li class="navbarli"><a href="VoorstellingOverzicht.aspx">Voorstelling overzicht</a></li>
+                <li class="navbarli"><a href="Login.aspx">Login</a></li>
+            </ul>
+        </div>
+        <div class="contentarea">
+            <asp:ContentPlaceHolder ID="Body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div class="sidebar">
+        </div>
+        <div class="footer">
+            all rights reserverd
+        </div>
+    </div>
+</body>
+
+</html>

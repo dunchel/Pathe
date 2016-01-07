@@ -1,0 +1,81 @@
+D:\ICT\Semester 2\Software\ASP opdracht\Eindoplevering\Pathe\Pathe\bin\roslyn\csc.exe
+D:\ICT\Semester 2\Software\ASP opdracht\Eindoplevering\Pathe\Pathe\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\ICT\Semester 2\Software\ASP opdracht\Eindoplevering\Pathe\Pathe\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\ICT\Semester 2\Software\ASP opdracht\Eindoplevering\Pathe\Pathe\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\ICT\Semester 2\Software\ASP opdracht\Eindoplevering\Pathe\Pathe\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\ICT\Semester 2\Software\ASP opdracht\Eindoplevering\Pathe\Pathe\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\ICT\Semester 2\Software\ASP opdracht\Eindoplevering\Pathe\Pathe\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\ICT\Semester 2\Software\ASP opdracht\Eindoplevering\Pathe\Pathe\bin\roslyn\System.Collections.Immutable.dll
+D:\ICT\Semester 2\Software\ASP opdracht\Eindoplevering\Pathe\Pathe\bin\roslyn\System.Reflection.Metadata.dll
+D:\ICT\Semester 2\Software\ASP opdracht\Eindoplevering\Pathe\Pathe\bin\roslyn\vbc.exe
+D:\ICT\Semester 2\Software\ASP opdracht\Eindoplevering\Pathe\Pathe\bin\roslyn\VBCSCompiler.exe
+D:\ICT\Semester 2\Software\ASP opdracht\Eindoplevering\Pathe\Pathe\bin\roslyn\VBCSCompiler.exe.config
+D:\ICT\Semester 2\Software\ASP opdracht\Eindoplevering\Pathe\Pathe\bin\Pathe.dll.config
+D:\ICT\Semester 2\Software\ASP opdracht\Eindoplevering\Pathe\Pathe\bin\Pathe.dll
+D:\ICT\Semester 2\Software\ASP opdracht\Eindoplevering\Pathe\Pathe\bin\Pathe.pdb
+D:\ICT\Semester 2\Software\ASP opdracht\Eindoplevering\Pathe\Pathe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\ICT\Semester 2\Software\ASP opdracht\Eindoplevering\Pathe\Pathe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\ICT\Semester 2\Software\ASP opdracht\Eindoplevering\Pathe\Pathe\obj\Debug\Pathe.dll
+D:\ICT\Semester 2\Software\ASP opdracht\Eindoplevering\Pathe\Pathe\obj\Debug\Pathe.pdb
+F:\Pathe\Pathe\bin\roslyn\csc.exe
+F:\Pathe\Pathe\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Pathe\Pathe\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Pathe\Pathe\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Pathe\Pathe\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Pathe\Pathe\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Pathe\Pathe\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Pathe\Pathe\bin\roslyn\System.Collections.Immutable.dll
+F:\Pathe\Pathe\bin\roslyn\System.Reflection.Metadata.dll
+F:\Pathe\Pathe\bin\roslyn\vbc.exe
+F:\Pathe\Pathe\bin\roslyn\VBCSCompiler.exe
+F:\Pathe\Pathe\bin\roslyn\VBCSCompiler.exe.config
+F:\Pathe\Pathe\bin\Pathe.dll.config
+F:\Pathe\Pathe\bin\Pathe.dll
+F:\Pathe\Pathe\bin\Pathe.pdb
+F:\Pathe\Pathe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Pathe\Pathe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Pathe\Pathe\obj\Debug\Pathe.csprojResolveAssemblyReference.cache
+F:\Pathe\Pathe\obj\Debug\Pathe.dll
+F:\Pathe\Pathe\obj\Debug\Pathe.pdb
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\csc.exe
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\vbc.exe
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\VBCSCompiler.exe
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\Pathe.dll.config
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\Pathe.dll
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\Pathe.pdb
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Sander\Desktop\Pathe\Pathe\obj\Debug\Pathe.dll
+C:\Users\Sander\Desktop\Pathe\Pathe\obj\Debug\Pathe.pdb
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\Oracle.DataAccess.dll
+C:\Users\Sander\Desktop\Pathe\Pathe\obj\Debug\Pathe.csprojResolveAssemblyReference.cache
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\bin\roslyn\csc.exe
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\bin\roslyn\System.Collections.Immutable.dll
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\bin\roslyn\System.Reflection.Metadata.dll
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\bin\roslyn\vbc.exe
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\bin\roslyn\VBCSCompiler.exe
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\bin\roslyn\VBCSCompiler.exe.config
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\bin\Pathe.dll.config
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\bin\Pathe.dll
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\bin\Pathe.pdb
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\bin\Oracle.DataAccess.dll
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\obj\Debug\Pathe.csprojResolveAssemblyReference.cache
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\obj\Debug\Pathe.dll
+D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\obj\Debug\Pathe.pdb
