@@ -85,3 +85,13 @@
 .hidden{
     display:none;
 }
+
+.filmbox{
+    border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:#ffda74;
+    font-size: 14px;
+    padding: 10px;
+}
+
+

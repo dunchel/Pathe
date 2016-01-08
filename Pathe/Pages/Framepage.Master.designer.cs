@@ -22,6 +22,24 @@ namespace Pathe.Pages {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder Header;
         
         /// <summary>
+        /// masterpageform control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm masterpageform;
+        
+        /// <summary>
+        /// loginbutton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button loginbutton;
+        
+        /// <summary>
         /// Body control.
         /// </summary>
         /// <remarks>

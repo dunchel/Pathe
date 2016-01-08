@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+using Pathe.Database;
 namespace Pathe.Classes
 {
     public class Film
@@ -20,12 +20,31 @@ namespace Pathe.Classes
         {
             this.FilmID = filmID;
             this.FilmNaam = filmNaam;
+            this.Rating = rating;
+            this.Kijkwijzer = kijkwijzer;
+            this.Genre = genre;
+            this.Kwaliteit = kwaliteit;
+            this.is3D = id3D;
+            this.Lengte = lengte;
 
         }
 
         public override string ToString()
         {
             return null;
+        }
+
+        public static List<Film> GetFilms()
+        {
+            DatabaseHandler db = new DatabaseHandler();
+            return   db.GetFilms();
+        }
+
+        public static Film GetFilm(int filmid)
+        {
+
+            DatabaseHandler db = new DatabaseHandler();
+            return db.GetFilm(filmid);
         }
     }
 }

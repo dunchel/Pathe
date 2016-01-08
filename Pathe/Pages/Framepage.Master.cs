@@ -14,22 +14,59 @@ namespace Pathe.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            RefreshMenu();
+            RefreshMasterPage();
+        }
+        
+
+        private void RefreshMasterPage()
+        {
+            string xja = "true";
+            string xnee = "false";
+            if (this.Session["isLoggedIn"] == null)
+            {
+                this.Session["isLoggedIn"] = xnee;
+                loginbutton.Text = "Login";
+                
+            } else
+            {
+                if ((string)this.Session["isLoggedIn"] == xja)
+                { 
+
+                loginbutton.Text = "Logout";
+                } else if ((string)this.Session["isLoggedIn"] == xnee)
+                {
+                    loginbutton.Text = "Login";
+
+                }
+            }
 
         }
 
-
-
-        private void RefreshMenu()
+        protected void loginbutton_Click(object sender, EventArgs e)
         {
-            string Truth = "true";
-            string lie = "false";
-            if (Session["IsLoggedIn"] == null)
+            string xja = "true";
+            string xnee = "false";
+            if (this.Session["isLoggedIn"] == null)
             {
-                Session["IsLoggedIn"] = lie;
-                
+                Response.Redirect("Login.aspx");
+
+
             }
+            else
+            {
+                if ((string)this.Session["isLoggedIn"] == xja)
+                {
+                    this.Session["isLoggedIn"] = xnee;
+                    Response.Redirect("Login.aspx");
+
+                }
+                else if ((string)this.Session["isLoggedIn"] == xnee)
+                {
+                    Response.Redirect("Login.aspx");
+
+                }
+            }
+           
         }
     }
-
 }

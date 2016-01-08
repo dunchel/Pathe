@@ -10,15 +10,15 @@
 namespace Pathe.Pages {
     
     
-    public partial class FilmOverzicht {
+    public partial class Film {
         
         /// <summary>
-        /// lv_FilmList control.
+        /// filmnaam control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lv_FilmList;
+        protected global::System.Web.UI.WebControls.Literal filmnaam;
     }
 }

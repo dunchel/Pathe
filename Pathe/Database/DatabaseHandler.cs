@@ -9,6 +9,7 @@ using Oracle.DataAccess.Client;
 using System.Data.Sql;
 using System.Data.Common;
 using Pathe.Classes;
+using System.Diagnostics;
 
 namespace Pathe.Database
 {
@@ -207,7 +208,14 @@ namespace Pathe.Database
 
         }
 
-
+        public void AddFilm(Film newFilmToAdd)
+        {
+            Connect();
+            cmd = new OracleCommand();
+            cmd.Connection = con;
+            cmd.CommandText =
+               "INSERT INTO FILM (FILMNAAM, RATING, KIJKWIJZER, GENRE, KWALITEIT, DIMENSIONAAL,LENGTE) VALUES ( :NewFilmnaam,:NewRating, :NewKijkwijzer, :NewGenre, :NewKwaliteit, :NewDimensionaal, :NewLengte)";
+        }
 
         public bool AuthenticateUser(string Email, string Pass)
         {
@@ -246,6 +254,104 @@ namespace Pathe.Database
             }
         }
 
+        public List<Film> GetFilms()
+        {
+            try
+            {
+                Connect();
+                List<Film> films = new List<Film>();
+                this.cmd = new OracleCommand();
+                this.cmd.Connection = this.con;
+                this.cmd.CommandText =
+                    "SELECT * FROM FILM";
+                this.cmd.CommandType = System.Data.CommandType.Text;
+                this.dr = this.cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    var filmid = SafeReadInt(dr, 0);
+                    var filmnaam = SafeReadString(dr, 1);
+                    var rating = SafeReadInt(dr, 2);
+                    var kijkwijzer = SafeReadString(dr, 3);
+                    var genre = SafeReadString(dr, 4);
+                    var kwaliteit = SafeReadString(dr, 5);
+                    var dimensionaal = SafeReadString(dr, 6);
+                    var lengte = SafeReadInt(dr, 7);
+                    bool is3d;
+                    if (dimensionaal == "3D")
+                    {
+                        is3d = true;
+                    }
+                    else
+                    {
+                        is3d = false;
+                    }
+
+                    Film filmtoadd = new Film(filmid, filmnaam, rating, kijkwijzer, genre, kwaliteit, is3d, lengte.ToString());
+                    films.Add(filmtoadd);
+
+                }
+                return films;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+
+        public Film GetFilm(int filmid)
+        {
+            Film filmtoadd = null;
+            try
+            {
+                Connect();
+                this.cmd = new OracleCommand();
+                this.cmd.Connection = this.con;
+                this.cmd.CommandText =
+                    "SELECT * FROM FILM WHERE FILMID =:NewFilmID";
+                cmd.Parameters.Add("NewFilmID", filmid);
+                this.cmd.CommandType = System.Data.CommandType.Text;
+                this.dr = this.cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    var filmID = SafeReadInt(dr, 0);
+                    var filmnaam = SafeReadString(dr, 1);
+                    var rating = SafeReadInt(dr, 2);
+                    var kijkwijzer = SafeReadString(dr, 3);
+                    var genre = SafeReadString(dr, 4);
+                    var kwaliteit = SafeReadString(dr, 5);
+                    var dimensionaal = SafeReadString(dr, 6);
+                    var lengte = SafeReadInt(dr, 7);
+                    bool is3d;
+                    if (dimensionaal == "3D")
+                    {
+                        is3d = true;
+                    }
+                    else
+                    {
+                        is3d = false;
+                    }
+                    filmtoadd = new Film(filmID, filmnaam, rating, kijkwijzer, genre, kwaliteit, is3d, lengte.ToString());
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+            return filmtoadd;
+
+        }
+
         public List<Users> GetUserCache()
         {
             try
@@ -262,7 +368,7 @@ namespace Pathe.Database
                 while (dr.Read())
                 {
 
-                    int useridx = Convert.ToInt32(dr["UserID"].ToString()); 
+                    int useridx = Convert.ToInt32(dr["UserID"].ToString());
                     var voornaamx = SafeReadString(dr, 1);
                     var achternaamx = SafeReadString(dr, 2);
                     var emailx = SafeReadString(dr, 3);
@@ -271,7 +377,7 @@ namespace Pathe.Database
                     requiredlist.Add(item);
                 }
                 return requiredlist;
-            } 
+            }
             catch (Exception e)
 
             {
@@ -283,7 +389,7 @@ namespace Pathe.Database
                 Disconnect();
             }
 
-            
+
         }
 
     }

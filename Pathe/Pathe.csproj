@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Content\Images\Pathe_logo.png" />
     <Content Include="packages.config" />
+    <Content Include="Pages\Film.aspx" />
     <Content Include="Pages\FilmOverzicht.aspx" />
     <Content Include="Pages\Framepage.Master" />
     <None Include="Web.Debug.config">
@@ -101,6 +102,13 @@
     <Compile Include="Classes\Zaal.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Film.aspx.cs">
+      <DependentUpon>Film.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Film.aspx.designer.cs">
+      <DependentUpon>Film.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\FilmOverzicht.aspx.cs">
       <DependentUpon>FilmOverzicht.aspx</DependentUpon>

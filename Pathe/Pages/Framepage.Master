@@ -12,6 +12,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <form id="masterpageform" runat="server">
     <div class="wrapper">
         <div class="topbar"></div>
         <div class="navigationbar">
@@ -20,8 +21,10 @@
                     <img src="../Content/Images/Pathe_logo.png" style="width: 100px; height: 60px;" /></a></li>
                 <li class="navbarli"><a href="FilmOverzicht.aspx">Film overzicht</a></li>
                 <li class="navbarli"><a href="VoorstellingOverzicht.aspx">Voorstelling overzicht</a></li>
-                <li class="navbarli"><a href="Login.aspx">Login</a></li>
-                <li class ="navbarli"><a href="Logout.aspx"</li>
+                           
+                                      
+                <li class ="navbarli"><asp:Button runat="server" id="loginbutton" OnClick="loginbutton_Click" /></li>
+               
             </ul>
         </div>
         <div class="contentarea">
@@ -35,6 +38,7 @@
             all rights reserverd
         </div>
     </div>
+        </form>
 </body>
 
 </html>

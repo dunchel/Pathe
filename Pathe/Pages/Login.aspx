@@ -4,7 +4,7 @@
     <title>Pathe - Home</title>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="Body" runat="server">
-    <form id="FormLogin" runat="server">
+   
 
         <h1>Login</h1>
        
@@ -27,5 +27,5 @@
                 <asp:Button ID="Btn_Register" runat="server" Text="Register" Width="100px" OnClick="Btn_Register_Click1" />
             </li>
         </ul>
-    </form>
+    
 </asp:Content>
