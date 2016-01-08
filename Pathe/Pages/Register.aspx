@@ -5,7 +5,7 @@
     <title>Pathe - Register</title>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="Body" runat="server">
-    <form id="FormRegister" runat="server">
+ 
 
         <div>
             <h1>Register</h1>
@@ -52,6 +52,6 @@
 
             </ul>
         </div>
-    </form>
+ 
 </asp:Content>
 

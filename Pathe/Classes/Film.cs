@@ -28,6 +28,18 @@ namespace Pathe.Classes
             this.Lengte = lengte;
 
         }
+        public Film( string filmNaam, int rating, string kijkwijzer, string genre, string kwaliteit, bool id3D, string lengte)
+        {
+            
+            this.FilmNaam = filmNaam;
+            this.Rating = rating;
+            this.Kijkwijzer = kijkwijzer;
+            this.Genre = genre;
+            this.Kwaliteit = kwaliteit;
+            this.is3D = id3D;
+            this.Lengte = lengte;
+
+        }
 
         public override string ToString()
         {
@@ -45,6 +57,12 @@ namespace Pathe.Classes
 
             DatabaseHandler db = new DatabaseHandler();
             return db.GetFilm(filmid);
+        }
+
+        public static void AddFilm(Film film)
+        {
+            DatabaseHandler db = new DatabaseHandler();
+             db.AddFilm(film);
         }
     }
 }

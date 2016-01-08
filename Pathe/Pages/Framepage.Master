@@ -23,7 +23,7 @@
                 <li class="navbarli"><a href="VoorstellingOverzicht.aspx">Voorstelling overzicht</a></li>
                            
                                       
-                <li class ="navbarli"><asp:Button runat="server" id="loginbutton" OnClick="loginbutton_Click" /></li>
+                <li class ="navbarli"><asp:Button runat="server" id="loginbutton" OnClick="loginbutton_Click"  Width= "100px" Cssclass="buttonexpanded"/></li>
                
             </ul>
         </div>

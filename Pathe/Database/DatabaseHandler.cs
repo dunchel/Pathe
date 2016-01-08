@@ -210,11 +210,69 @@ namespace Pathe.Database
 
         public void AddFilm(Film newFilmToAdd)
         {
-            Connect();
-            cmd = new OracleCommand();
-            cmd.Connection = con;
-            cmd.CommandText =
-               "INSERT INTO FILM (FILMNAAM, RATING, KIJKWIJZER, GENRE, KWALITEIT, DIMENSIONAAL,LENGTE) VALUES ( :NewFilmnaam,:NewRating, :NewKijkwijzer, :NewGenre, :NewKwaliteit, :NewDimensionaal, :NewLengte)";
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                   "INSERT INTO FILM (FILMNAAM, RATING, KIJKWIJZER, GENRE, KWALITEIT, DIMENSIONAAL,LENGTE) VALUES ( :NewFilmnaam,:NewRating, :NewKijkwijzer, :NewGenre, :NewKwaliteit, :NewDimensionaal, :NewLengte)";
+                cmd.Parameters.Add("NewFilmnaam", OracleDbType.Varchar2).Value = newFilmToAdd.FilmNaam;
+                cmd.Parameters.Add("NewRating", OracleDbType.Int32).Value = newFilmToAdd.Rating;
+                cmd.Parameters.Add("NewKijkwijzer", OracleDbType.Varchar2).Value = newFilmToAdd.Kijkwijzer;
+                cmd.Parameters.Add("NewGenre", OracleDbType.Varchar2).Value = newFilmToAdd.Genre;
+                cmd.Parameters.Add("NewKwaliteit", OracleDbType.Varchar2).Value = newFilmToAdd.Kwaliteit;
+                cmd.Parameters.Add("NewDimensionaal", OracleDbType.Varchar2).Value = newFilmToAdd.is3D;
+                cmd.Parameters.Add("NewLengte", OracleDbType.Int32).Value = newFilmToAdd.Lengte;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Disconnect();
+            }
+
+
+
+
+
+        }
+
+        public List<Reactie> reacties(int filmid)
+        {
+            return null;
+        }
+
+
+        public bool AddReview(Reactie reactie)
+        {
+            try
+            {
+                Connect();
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText =
+                   "INSERT INTO REACTIE(REACTIETEKST, FILMID) VALUES(:NewReactieTekst, :NewFilmID)";
+                cmd.Parameters.Add("NewReactieTekst", OracleDbType.Varchar2).Value = reactie.ReactieTekst;
+                cmd.Parameters.Add("NewFilmID", OracleDbType.Int32).Value = reactie.FilmID;
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+                return false;
+            }
+            finally
+            {
+                Disconnect();
+            }
+
         }
 
         public bool AuthenticateUser(string Email, string Pass)
@@ -352,6 +410,42 @@ namespace Pathe.Database
 
         }
 
+        public List<Reactie> GetReacties(int filmid)
+        {
+            try {
+                Connect();
+                List<Reactie> reacties = new List<Reactie>();
+                this.cmd = new OracleCommand();
+                this.cmd.Connection = this.con;
+                this.cmd.CommandText =
+                    "SELECT * FROM Reactie WHERE FILMID =:NewFilmID";
+                cmd.Parameters.Add("NewFilmID", filmid);
+                this.cmd.CommandType = System.Data.CommandType.Text;
+                this.dr = this.cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    var reactieid = SafeReadInt(dr, 0);
+                    var reactietekst = SafeReadString(dr, 1);
+                    var filmID = SafeReadInt(dr, 2);
+
+                    Reactie reactietoadd = new Reactie(reactieid, reactietekst, filmID);
+                    reacties.Add(reactietoadd);
+                    
+                }
+                return reacties;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+            
+        }
+
         public List<Users> GetUserCache()
         {
             try
@@ -361,7 +455,7 @@ namespace Pathe.Database
                 this.cmd = new OracleCommand();
                 this.cmd.Connection = this.con;
                 this.cmd.CommandText =
-                    "SELECT UserID, Voornaam, Achternaam, Email FROM GEBRUIKER";
+                    "SELECT UserID, Voornaam, Achternaam, Email, abbonement FROM GEBRUIKER";
 
                 this.cmd.CommandType = System.Data.CommandType.Text;
                 this.dr = this.cmd.ExecuteReader();
@@ -372,8 +466,9 @@ namespace Pathe.Database
                     var voornaamx = SafeReadString(dr, 1);
                     var achternaamx = SafeReadString(dr, 2);
                     var emailx = SafeReadString(dr, 3);
+                    var abbonement = SafeReadString(dr, 4);
 
-                    Users item = new Users(useridx, voornaamx, achternaamx, emailx);
+                    Users item = new Users(useridx, voornaamx, achternaamx, emailx, abbonement);
                     requiredlist.Add(item);
                 }
                 return requiredlist;

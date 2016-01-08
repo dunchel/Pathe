@@ -55,12 +55,13 @@ namespace Pathe.Classes
         }
 
 
-        public Users(int id , string voornaam ,string achternaam , string email)
+        public Users(int id , string voornaam ,string achternaam , string email, string abbonement)
         {
             this.UserID = id;
             this.Voornaam = voornaam;
             this.Achternaam = achternaam;
-            this.Email = email; 
+            this.Email = email;
+            this.Abbonement = abbonement;
 
         }
         public override string ToString()

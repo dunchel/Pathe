@@ -15,7 +15,7 @@
                 <asp:TextBox ID="TB_Username" runat="server" placeholder="Username" Height="22px" CssClass="logintextbox"></asp:TextBox>
             </li>
             <li style="list-style-type: none">
-                <asp:TextBox ID="TB_Password" runat="server" placeholder="Password" Height="22px" CssClass="logintextbox"></asp:TextBox>
+                <asp:TextBox ID="TB_Password" runat="server" placeholder="Password" Height="22px" CssClass="logintextbox" TextMode="Password"></asp:TextBox>
             </li>
         </ul>
 
