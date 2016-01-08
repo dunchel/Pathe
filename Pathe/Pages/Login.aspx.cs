@@ -8,7 +8,8 @@ using Pathe.Classes;
 using Pathe.Pages;
 using System.ComponentModel.DataAnnotations;
 using Pathe;
-using Pathe.Casche;
+using Pathe.Cache;
+using Pathe.Database;
 
 namespace Pathe.Pages
 {

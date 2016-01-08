@@ -90,7 +90,8 @@
   <ItemGroup>
     <Compile Include="Cache\UserCache.cs" />
     <Compile Include="Classes\Bioscoop.cs" />
-    <Compile Include="Classes\DatabaseHandler.cs" />
+    <Compile Include="Classes\Handler.cs" />
+    <Compile Include="Database\DatabaseHandler.cs" />
     <Compile Include="Classes\Film.cs" />
     <Compile Include="Classes\Reactie.cs" />
     <Compile Include="Classes\Reservering.cs" />

@@ -19,3 +19,24 @@ D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\bin\
 D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\obj\x64\Debug\Pathe.csprojResolveAssemblyReference.cache
 D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\obj\x64\Debug\Pathe.dll
 D:\ICT\Semester 2\Software\ASP opdracht\verbeterde versie pathe\Pathe\Pathe\obj\x64\Debug\Pathe.pdb
+C:\Users\Sander\Desktop\Pathe\Pathe\obj\x64\Debug\Pathe.csprojResolveAssemblyReference.cache
+C:\Users\Sander\Desktop\Pathe\Pathe\obj\x64\Debug\Pathe.dll
+C:\Users\Sander\Desktop\Pathe\Pathe\obj\x64\Debug\Pathe.pdb
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\csc.exe
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\vbc.exe
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\VBCSCompiler.exe
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\Pathe.dll.config
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\Pathe.dll
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\Pathe.pdb
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\Oracle.DataAccess.dll
+C:\Users\Sander\Desktop\Pathe\Pathe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml

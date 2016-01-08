@@ -8,8 +8,9 @@ using Oracle.DataAccess;
 using Oracle.DataAccess.Client;
 using System.Data.Sql;
 using System.Data.Common;
+using Pathe.Classes;
 
-namespace Pathe.Classes
+namespace Pathe.Database
 {
     public class DatabaseHandler
     {

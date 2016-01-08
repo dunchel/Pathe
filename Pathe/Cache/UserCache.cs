@@ -4,9 +4,10 @@ using System.Linq;
 using System.Web;
 using Pathe;
 using Pathe.Classes;
+using Pathe.Database;
 
 
-namespace Pathe.Casche
+namespace Pathe.Cache
 {
     public static class UserCache
     {
