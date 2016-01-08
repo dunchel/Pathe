@@ -54,9 +54,18 @@ namespace Pathe.Classes
             this.Abbonement = abbonement;
         }
 
+
+        public Users(int id , string voornaam ,string achternaam , string email)
+        {
+            this.UserID = id;
+            this.Voornaam = voornaam;
+            this.Achternaam = achternaam;
+            this.Email = email; 
+
+        }
         public override string ToString()
         {
-            return null;
+            return Voornaam + " " + Achternaam;
         }
     }
 }

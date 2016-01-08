@@ -3,19 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Oracle;
+using System.Data;
 using Oracle.DataAccess;
 using Oracle.DataAccess.Client;
+using System.Data.Sql;
+using System.Data.Common;
 
 namespace Pathe.Classes
 {
     public class DatabaseHandler
     {
         public string connectionstring = "User Id=system;Password=shadow;Data Source=localhost:1521";
-         public OracleConnection con;
-        public  OracleCommand cmd;
-         public OracleDataReader dr;
+        public OracleConnection con;
+        public OracleCommand cmd;
+        public OracleDataReader dr;
 
-        public  void Connect()
+        public void Connect()
         {
             con = new OracleConnection();
             con.ConnectionString = connectionstring;
@@ -23,7 +26,7 @@ namespace Pathe.Classes
             Console.WriteLine("Connection succesfull");
         }
 
-        public  void Disconnect()
+        public void Disconnect()
         {
             con.Close();
             con.Dispose();
@@ -58,7 +61,7 @@ namespace Pathe.Classes
                     return 0;
             }
         }
-        public  Users GetUser(int userID)
+        public Users GetUser(string Email, string Wachtwoord)
         {
             Users Toadd = null;
 
@@ -66,9 +69,11 @@ namespace Pathe.Classes
             {
                 Connect();
                 cmd.Connection = con;
-                cmd.CommandText = "INSERT INTO GEBRUIKER UserID, Voornaam, Achternaam, Geboortedatum, Geslacht, Straat, Huisnummer, Postcode, Plaats,Telefoonnummer, Email, Abbonement FROM GEBRUIKER WHERE UserID=:UserID";
-                cmd.Parameters.Add("UserID", userID);
-                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = "SELECT UserID, Voornaam, Achternaam, Geboortedatum, Geslacht, Straat, Huisnummer, Postcode, Plaats,Telefoonnummer, Email, Abbonement FROM GEBRUIKER WHERE UserID=:UserID";
+                cmd.Parameters.Add("Email", Email);
+                cmd.Parameters.Add("Wachtwoord", Wachtwoord);
+
+                cmd.CommandType = CommandType.Text;
                 dr = cmd.ExecuteReader();
                 dr.Read();
             }
@@ -99,8 +104,8 @@ namespace Pathe.Classes
                     var email = SafeReadString(dr, 12);
                     var abbonement = SafeReadString(dr, 13);
 
-                    Users user = new Users(userID, voornaam, achternaam, wachtwoord, geboortedatum, geslacht, straat, huisnummer, postcode, plaats, telefoonnummer, email, abbonement);
-                    
+                    Users user = new Users(id, voornaam, achternaam, wachtwoord, geboortedatum, geslacht, straat, huisnummer, postcode, plaats, telefoonnummer, email, abbonement);
+
                 }
             }
             catch
@@ -110,7 +115,7 @@ namespace Pathe.Classes
             return Toadd;
         }
 
-        public void  AddUser(Users newuser)
+        public void AddUser(Users newuser)
         {
             try
             {
@@ -119,7 +124,7 @@ namespace Pathe.Classes
                 cmd.Connection = con;
                 cmd.CommandText =
                     "INSERT INTO GEBRUIKER(VOORNAAM, ACHTERNAAM , Straat ,WACHTWOORD , GESLACHT, HUISNUMMER , POSTCODE , PLAATS , TELEFOONNUMMER, EMAIL , ABBONEMENT) VALUES(:NewVoornaam, :NewAchternaam,:NewStraat, :NewWachtwoord, :NewGeslacht, :NewHuisnummer, :NewPostcode, :NewPlaats, :NewTelefoonnumer, :NewEmail, :NewAbbonement)";
-               
+
                 cmd.Parameters.Add("NewVoornaam", OracleDbType.Varchar2).Value = newuser.Voornaam;
                 cmd.Parameters.Add("NewAchternaam", OracleDbType.Varchar2).Value = newuser.Achternaam;
                 cmd.Parameters.Add("NewStraat", OracleDbType.Varchar2).Value = newuser.Straat;
@@ -134,28 +139,152 @@ namespace Pathe.Classes
 
                 cmd.ExecuteNonQuery();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                
+
                 System.Diagnostics.Debug.WriteLine(ex.Message);
             }
             finally
             {
                 Disconnect();
             }
-          
+
+
+        }
+        // deze methode gaat alle users uit de database opvragen.
+        public List<Users> GetAllUsers()
+        {
+
+            List<Users> Userlist = new List<Users>();
+            try
+            {
+                Connect();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT UserID, Voornaam, Achternaam, Geboortedatum, Geslacht, Straat, Huisnummer, Postcode, Plaats,Telefoonnummer, Email, Abbonement FROM GEBRUIKER";
+                cmd.CommandType = System.Data.CommandType.Text;
+                dr = cmd.ExecuteReader();
+                dr.Read();
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+            try
+            {
+                while (dr.Read())
+                {
+                    var id = dr.GetInt32(0);
+                    var voornaam = SafeReadString(dr, 1);
+                    var achternaam = SafeReadString(dr, 2);
+                    var wachtwoord = SafeReadString(dr, 3);
+                    var geboortedatum = dr.GetDateTime(4);
+                    var geslacht = SafeReadString(dr, 5);
+                    var straat = SafeReadString(dr, 7);
+                    string huisnummer = SafeReadString(dr, 8);
+                    var postcode = SafeReadString(dr, 9);
+                    var plaats = SafeReadString(dr, 10);
+                    var telefoonnummer = SafeReadString(dr, 11);
+                    var email = SafeReadString(dr, 12);
+                    var abbonement = SafeReadString(dr, 13);
+
+                    Users user = new Users(id, voornaam, achternaam, wachtwoord, geboortedatum, geslacht, straat, huisnummer, postcode, plaats, telefoonnummer, email, abbonement);
+                    Userlist.Add(user);
+                }
+                Disconnect();
+                return Userlist;
+
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+
+
+        public bool AuthenticateUser(string Email, string Pass)
+        {
+            try
+            {
+                Connect();
+
+                cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT * FROM GEBRUIKER WHERE email =:NewEmail AND Wachtwoord =:NewWachtwoord";
+                cmd.Parameters.Add("NewEmail", Email);
+                cmd.Parameters.Add("NewWachtwoord", Pass);
+                cmd.CommandType = System.Data.CommandType.Text;
+                dr = cmd.ExecuteReader();
+
+                // ik gebruik hier de Hasrows methode. Als de waardes kloppen, dan zijn er rijen. 
+                // Deze bool is dus handig om te gebruiken als je een overeenkomst wil weten of
+                // er een overeenkomst is tussen de ingevulde waardes en de gebruiker.
+                if (dr.HasRows)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+
+                return false;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+
+        public List<Users> GetUserCache()
+        {
+            try
+            {
+                Connect();
+                List<Users> requiredlist = new List<Users>();
+                this.cmd = new OracleCommand();
+                this.cmd.Connection = this.con;
+                this.cmd.CommandText =
+                    "SELECT UserID, Voornaam, Achternaam, Email FROM GEBRUIKER";
+
+                this.cmd.CommandType = System.Data.CommandType.Text;
+                this.dr = this.cmd.ExecuteReader();
+                while (dr.Read())
+                {
+
+                    int useridx = Convert.ToInt32(dr["UserID"].ToString()); 
+                    var voornaamx = SafeReadString(dr, 1);
+                    var achternaamx = SafeReadString(dr, 2);
+                    var emailx = SafeReadString(dr, 3);
+
+                    Users item = new Users(useridx, voornaamx, achternaamx, emailx);
+                    requiredlist.Add(item);
+                }
+                return requiredlist;
+            } 
+            catch (Exception e)
+
+            {
+                System.Diagnostics.Debug.WriteLine(e.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+
             
         }
 
-        public bool DeleteUser()
-        {
-
-            return false;
-        }
-
-        public  bool Login()
-        {
-            return false;
-        }
     }
+
 }
