@@ -21,6 +21,7 @@
                 <li class="navbarli"><a href="FilmOverzicht.aspx">Film overzicht</a></li>
                 <li class="navbarli"><a href="VoorstellingOverzicht.aspx">Voorstelling overzicht</a></li>
                 <li class="navbarli"><a href="Login.aspx">Login</a></li>
+                <li class ="navbarli"><a href="Logout.aspx"</li>
             </ul>
         </div>
         <div class="contentarea">
